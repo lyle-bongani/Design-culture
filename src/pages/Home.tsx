@@ -6,6 +6,8 @@ import VisionMission from '../components/Home/VisionMission';
 import CoreValues from '../components/Home/CoreValues';
 import Services from '../components/Home/Services';
 import WhyChooseUs from '../components/Home/WhyChooseUs';
+import BrandShowcase from '../components/Home/BrandShowcase';
+import ContactSection from '../components/Home/ContactSection';
 
 const Home: React.FC = () => {
   return (
@@ -24,6 +26,8 @@ const Home: React.FC = () => {
       <CoreValues />
       <Services />
       <WhyChooseUs />
+      <BrandShowcase />
+      <ContactSection />
     </>
   );
 };

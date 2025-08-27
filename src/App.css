@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+/* Utility: clamp text to exactly 3 lines */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

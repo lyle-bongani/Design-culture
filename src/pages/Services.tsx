@@ -1,11 +1,17 @@
 import React from 'react';
+import ServicesHero from '../components/ServicesHero';
+import ServicePillars from '../components/ServicePillars';
+import ServicesCTA from '../components/ServicesCTA';
+import ServicesStory from '../components/ServicesStory';
 
 const Services: React.FC = () => {
   return (
-    <section className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-semibold text-gray-900">Services</h1>
-      <p className="mt-2 text-gray-600">This is the Services page.</p>
-    </section>
+    <>
+      <ServicesHero />
+      <ServicePillars />
+      <ServicesCTA />
+      <ServicesStory />
+    </>
   );
 };
 

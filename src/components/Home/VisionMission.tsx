@@ -1,4 +1,6 @@
 import React from 'react';
+import Visibility from '@mui/icons-material/Visibility';
+import TrackChanges from '@mui/icons-material/TrackChanges';
 
 type CardProps = {
   title: string;
@@ -11,20 +13,26 @@ const Card: React.FC<CardProps> = ({ title, description, iconSrc, iconAlt }) => 
   <div className="relative overflow-hidden rounded-2xl bg-[#1F2429] text-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-white/5">
     <div className="mx-auto max-w-xl px-6 py-10 sm:px-8 sm:py-12 text-center">
       {iconSrc ? (
-        <div className="mx-auto mb-2 h-20 w-20 rounded-full ring-4 ring-white bg-[#1F2429] flex items-center justify-center">
+        <div className="mx-auto mb-2 h-24 w-24 rounded-full ring-4 ring-white bg-[#1F2429] flex items-center justify-center">
           <img
             src={iconSrc}
             alt={iconAlt || title}
-            className="h-12 w-12 object-contain opacity-95"
+            className="h-16 w-16 object-contain opacity-95"
           />
         </div>
       ) : (
-        <div className="mx-auto mb-2 h-20 w-20 rounded-full ring-4 ring-white bg-[#1F2429] flex items-center justify-center text-white/90">
-          <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.6">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M3 12s4-6 9-6 9 6 9 6-4 6-9 6-9-6-9-6z" />
-            <circle cx="12" cy="12" r="2.5" />
-          </svg>
+        <div className="mx-auto mb-2 h-24 w-24 rounded-full ring-4 ring-white bg-[#1F2429] flex items-center justify-center text-white/90">
+          {title.toLowerCase().includes('vision') ? (
+            <Visibility sx={{ fontSize: 56 }} />
+          ) : title.toLowerCase().includes('mission') ? (
+            <TrackChanges sx={{ fontSize: 56 }} />
+          ) : (
+            <svg viewBox="0 0 24 24" className="h-14 w-14" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12s4-6 9-6 9 6 9 6-4 6-9 6-9-6-9-6z" />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+          )}
         </div>
       )}
       <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight uppercase">{title}</h3>

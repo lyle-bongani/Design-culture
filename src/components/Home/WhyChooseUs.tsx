@@ -63,7 +63,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
             <div className="text-center">
               <h4 className="text-xl font-bold text-gray-800">{leftTitle}</h4>
             </div>
-            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 md:gap-12">
               {benefits.map((b, i) => (
                 <BenefitPill key={i} {...b} />
               ))}

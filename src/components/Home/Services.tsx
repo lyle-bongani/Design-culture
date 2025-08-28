@@ -17,23 +17,31 @@ const DefaultItems: ServiceItem[] = [
     title: 'Branding',
     description:
       "At Design Culture, we believe every brand has a unique soul waiting to be revealed. Our process begins with discovery uncovering your mission, vision, and market edge. We sketch and develop visual concepts that reflect your brand’s essence. Then refine color, typography, and elements into a cohesive identity. Finally, we deliver a polished logo built to inspire across all platforms.",
+    iconSrc: '/images/icons/branding.png',
+    imageSrc: undefined,
   },
   {
     title: 'Print Design',
     description:
       "We design brochures and flyers that grab attention and deliver your message with impact. Our business cards impress with standout designs and premium finishes. Bold posters and banners bring your events and promotions to life. We craft packaging that enhances brand presence and customer experience. Every piece reflflects your brand’s unique identity with creativity and intention.",
+    iconSrc: '/images/icons/print.png',
   },
   {
     title: 'Indoor & Outdoor Branding',
     description:
       "Play your best game in our custom sublimated Golf t-shirts by Design Culture made for comfort, performance, and style on the course. Not readily available; we create them per order only to ensure a perfect fit and unique design every time.Not readily available; we create them per order only to ensure a perfect fifit and unique design every timeNot readily available; we create them per order only to ensure a perfect fit and unique design every time",
+    iconSrc: '/images/icons/sewing.png',
   },
 ];
 
 const IconBadge: React.FC<{ src?: string; alt?: string }> = ({ src, alt }) => (
   <div className="h-20 w-20 rounded-full ring-4 ring-white bg-[#1F2429] flex items-center justify-center shadow-md">
     {src ? (
-      <img src={src} alt={alt || 'icon'} className="h-12 w-12 object-contain" />
+      <img
+        src={src}
+        alt={alt || 'icon'}
+        className={`${(alt && alt.toLowerCase().includes('branding')) ? 'h-16 w-16 invert' : (alt && alt.toLowerCase().includes('print')) ? 'h-12 w-12 invert' : (src && src.includes('sewing')) ? 'h-12 w-12 invert' : 'h-12 w-12'} object-contain`}
+      />
     ) : (
       <svg viewBox="0 0 24 24" className="h-12 w-12 text-white" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M12 3l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 21l2-7L2 10h7l3-7z" />

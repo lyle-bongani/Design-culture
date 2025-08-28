@@ -12,6 +12,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Disclaimer from './pages/Disclaimer';
 import Credits from './pages/Credits';
+import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/credits" element={<Credits />} />
         </Routes>
         <Footer />
+        <FloatingButtons />
       </div>
     </BrowserRouter>
   );

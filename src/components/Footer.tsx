@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             <h4 className="font-extrabold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/90 text-sm">
               <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-service" className="hover:underline">Term Of Service</Link></li>
+              <li><Link to="/terms-of-service" className="hover:underline">Terms of Service</Link></li>
               <li><Link to="/disclaimer" className="hover:underline">Disclaimer</Link></li>
               <li><Link to="/credits" className="hover:underline">Credits</Link></li>
             </ul>
@@ -89,10 +89,13 @@ const Footer: React.FC = () => {
         {/* Bottom row */}
         <div className="mt-4 flex flex-col gap-3 items-start justify-between sm:flex-row sm:items-center text-sm text-white/90">
           <div>
-            Copyright c 2025, All rights reserved. designed by Design Culture
+            Copyright © 2025, All rights reserved. designed by{' '}
+            <a href="https://www.spemedia.co.zw/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              speMedia
+            </a>
           </div>
           <div className="flex items-center gap-6">
-            <Link to="/terms-of-service" className="hover:underline">Terms and Condits</Link>
+            <Link to="/terms-of-service" className="hover:underline">Terms of Service</Link>
             <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
           </div>
         </div>

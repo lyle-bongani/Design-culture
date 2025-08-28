@@ -30,8 +30,6 @@ const Header: React.FC = () => {
             <li><NavLink to="/services" className={({isActive})=> isActive? 'text-gray-900':'text-gray-600 hover:text-gray-900 transition-colors'}>Services</NavLink></li>
             <li><NavLink to="/service-pillar" className={({isActive})=> isActive? 'text-gray-900':'text-gray-600 hover:text-gray-900 transition-colors'}>Service Pillar</NavLink></li>
             <li><NavLink to="/contact-us" className={({isActive})=> isActive? 'text-gray-900':'text-gray-600 hover:text-gray-900 transition-colors'}>Contact Us</NavLink></li>
-            <li><NavLink to="/privacy-policy" className={({isActive})=> isActive? 'text-gray-900':'text-gray-600 hover:text-gray-900 transition-colors'}>Privacy Policy</NavLink></li>
-            <li><NavLink to="/terms-of-service" className={({isActive})=> isActive? 'text-gray-900':'text-gray-600 hover:text-gray-900 transition-colors'}>Terms Of Service</NavLink></li>
           </ul>
           <Link
             to="/contact-us"
@@ -91,8 +89,6 @@ const Header: React.FC = () => {
             <li><NavLink onClick={()=>setOpen(false)} to="/about-us" className={({isActive})=> `block rounded-md px-3 py-2 ${isActive? 'bg-gray-100 text-gray-900':'text-gray-700 hover:bg-gray-50'}`}>About Us</NavLink></li>
             <li><NavLink onClick={()=>setOpen(false)} to="/services" className={({isActive})=> `block rounded-md px-3 py-2 ${isActive? 'bg-gray-100 text-gray-900':'text-gray-700 hover:bg-gray-50'}`}>Services</NavLink></li>
             <li><NavLink onClick={()=>setOpen(false)} to="/service-pillar" className={({isActive})=> `block rounded-md px-3 py-2 ${isActive? 'bg-gray-100 text-gray-900':'text-gray-700 hover:bg-gray-50'}`}>Service Pillar</NavLink></li>
-            <li><NavLink onClick={()=>setOpen(false)} to="/privacy-policy" className={({isActive})=> `block rounded-md px-3 py-2 ${isActive? 'bg-gray-100 text-gray-900':'text-gray-700 hover:bg-gray-50'}`}>Privacy Policy</NavLink></li>
-            <li><NavLink onClick={()=>setOpen(false)} to="/terms-of-service" className={({isActive})=> `block rounded-md px-3 py-2 ${isActive? 'bg-gray-100 text-gray-900':'text-gray-700 hover:bg-gray-50'}`}>Terms Of Service</NavLink></li>
           </ul>
           <div className="mt-3">
             <Link

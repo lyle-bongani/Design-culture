@@ -19,7 +19,7 @@ const ContactCard: React.FC = () => {
 
   return (
     <section className="container mx-auto px-4 -mt-8 sm:-mt-10 md:-mt-14 pb-10">
-      <div className="rounded-2xl bg-white ring-1 ring-black/10 shadow-[0_12px_40px_rgba(0,0,0,0.16)]">
+      <div className="mx-auto max-w-4xl rounded-2xl bg-white ring-1 ring-black/10 shadow-[0_12px_40px_rgba(0,0,0,0.16)]">
         <div className="grid grid-cols-1 gap-8 p-6 sm:p-8 md:grid-cols-2">
           {/* Left: contact details */}
           <div>
@@ -58,13 +58,13 @@ const ContactCard: React.FC = () => {
               <div className="pt-2">
                 <h4 className="text-sm font-semibold text-gray-900">Follow us on social media</h4>
                 <div className="mt-3 flex items-center gap-3 text-gray-900">
-                  <a href="#" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
+                  <a href="https://facebook.com" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3V12h2.3l-.37 3h-1.93v7A10 10 0 0 0 22 12Z"/></svg>
                   </a>
-                  <a href="#" aria-label="Twitter" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
+                  <a href="https://twitter.com" aria-label="Twitter" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.2-.7.5-1.7.9-2.6 1.1C18 4.6 17 4 15.8 4c-2.2 0-3.9 2.1-3.4 4.2-3.1-.1-5.8-1.6-7.6-3.8C4.1 6 4.6 8 6.2 9c-.6 0-1.2-.2-1.8-.5 0 1.8 1.3 3.4 3.2 3.8-.6.2-1.3.2-1.9.1.5 1.6 2 2.7 3.8 2.8C7.4 16 5.7 16.6 4 16.5c1.8 1.1 3.9 1.8 6.1 1.8 7.4 0 11.6-6.3 11.4-12 0-.2 0-.3 0-.5.8-.5 1.5-1.2 2.1-2Z"/></svg>
                   </a>
-                  <a href="#" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
+                  <a href="https://instagram.com" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full ring-1 ring-black/10 hover:bg-gray-900 hover:text-white transition">
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
                   </a>
                 </div>

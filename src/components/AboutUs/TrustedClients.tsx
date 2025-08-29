@@ -1,37 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-type Client = {
-  name: string;
-  src?: string; // optional path to logo in public/images/clients
-};
-
-const clients: Client[] = [
-  { name: 'Just Property' },
-  { name: 'ZCC' },
-  { name: 'Ecobank' },
-  { name: 'ZIB' },
-  { name: 'Govt Emblem' },
-  { name: 'REDAN' },
-  { name: 'Magaya' },
-  { name: 'ZRP' },
-  { name: 'Zimpapers' },
-  { name: 'Tennis Zimbabwe' },
-  { name: 'Moore' },
-  { name: 'Peterhouse' },
-];
-
-const Card: React.FC<Client> = ({ name, src }) => (
-  <div className="rounded-xl bg-white px-4 py-3 shadow-[0_4px_14px_rgba(0,0,0,0.12)] ring-1 ring-black/10 grid place-items-center h-20">
-    {src ? (
-      // When logos are added under public/images/clients/, set src and alt
-      <img src={src} alt={name} className="max-h-12 w-auto object-contain" />
-    ) : (
-      <span className="text-xs font-semibold tracking-wide text-gray-700 select-none">{name}</span>
-    )}
-  </div>
-);
+const fileToAlt = (filename: string) => filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
 
 const TrustedClients: React.FC = () => {
+  const [files, setFiles] = useState<string[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/images/logo/logostwo/manifest.json')
+      .then((r) => {
+        if (!r.ok) throw new Error('manifest not found');
+        return r.json();
+      })
+      .then((list: string[]) => {
+        if (!cancelled) setFiles(list);
+      })
+      .catch(() => {
+        // Fallback to a static list based on current folder contents (best effort)
+        const fallback = [
+          'Ecobank-Logo.png',
+          'Zimbabwe-Council-for-Churches-ZCC.png',
+          'Harare_Coat_of_Arms.png',
+          'Magaya-Logo-High-Res-1024x964.jpg',
+          'Moore_Global.png',
+          'Peterhouse-Crest.jpg',
+          'svh-e1642588108123-1024x872.png',
+          'loho.png',
+          'DAIZ_bZXcAI0hhg.png',
+          'images (12).png',
+          'download (8).jpg',
+          '34686245_1915829378468831_6804840750925217792_n (1).jpg',
+        ];
+        if (!cancelled) {
+          setFiles(fallback);
+          setError('');
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section className="w-full bg-[#1F2429]">
       <div className="container mx-auto px-4 py-12 sm:py-14">
@@ -40,9 +50,19 @@ const TrustedClients: React.FC = () => {
         </h2>
 
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 sm:gap-6">
-          {clients.map((c) => (
-            <Card key={c.name} {...c} />
+          {(files ?? []).map((file) => (
+            <div key={file} className="rounded-xl bg-white px-4 py-2 shadow-[0_4px_14px_rgba(0,0,0,0.12)] ring-1 ring-black/10 grid place-items-center h-20">
+              <img
+                src={`/images/logo/logostwo/${file}`}
+                alt={fileToAlt(file)}
+                className="max-h-14 sm:max-h-16 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
           ))}
+          {files && files.length === 0 && (
+            <div className="col-span-full text-center text-white/80 text-sm">No client logos found.</div>
+          )}
         </div>
       </div>
     </section>

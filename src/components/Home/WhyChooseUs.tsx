@@ -73,7 +73,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
 
         {/* Right image */}
         <div className="h-full">
-          <div className="h-full overflow-hidden rounded-2xl ring-1 ring-black/5 shadow">
+          <div className="h-full overflow-hidden rounded-2xl ring-1 ring-black/5 shadow relative">
             {rightImageSrc ? (
               <img
                 src={rightImageSrc}
@@ -83,6 +83,12 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
             ) : (
               <div className="h-[420px] w-full bg-gradient-to-br from-gray-200 to-gray-300 md:h-[460px]" />
             )}
+            {/* Bottom-left logo overlay */}
+            <img
+              src="/images/logo/DESIGN_CULTURE_LOGO.png"
+              alt="Design Culture logo"
+              className="absolute left-3 bottom-3 h-14 w-auto sm:h-20 invert brightness-0 drop-shadow"
+            />
           </div>
         </div>
       </div>

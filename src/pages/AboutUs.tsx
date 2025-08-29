@@ -13,7 +13,7 @@ const AboutUs: React.FC = () => {
       <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.18)] ring-1 ring-black/10">
         {/* Background image */}
         <img
-          src="/images/pics/abouthhero.jpg"
+          src="/images/pics/aboutpagehero.jpg"
           alt="About Design Culture"
           className="h-[520px] w-full object-cover sm:h-[560px] md:h-[600px]"
         />

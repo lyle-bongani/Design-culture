@@ -18,15 +18,15 @@ const Home: React.FC = () => {
         </h2>
       </div>
       <div className="mt-6 sm:mt-8 md:mt-12">
-        <Hero />
+        <Hero backgroundUrl="/images/pics/homehero.jpg" />
       </div>
       <UnderHeroSection />
       <AboutUsTeaser />
       <VisionMission />
       <CoreValues />
       <Services />
-      <WhyChooseUs />
-      <BrandShowcase />
+      <WhyChooseUs rightImageSrc="/images/pics/Why Choose Us  Our Differentiators.jpeg" />
+      <BrandShowcase logoImageSrc="/images/logo/DESIGN_CULTURE_LOGO.png" />
       <ContactSection />
     </>
   );

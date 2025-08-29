@@ -32,7 +32,11 @@ const BrandShowcase: React.FC<BrandShowcaseProps> = ({
         {/* Centered logo lockup */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-6">
           {logoImageSrc ? (
-            <img src={logoImageSrc} alt="Design Culture logo" className="h-16 w-auto sm:h-20 md:h-24 object-contain" />
+            <img
+              src={logoImageSrc}
+              alt="Design Culture logo"
+              className="h-48 w-auto sm:h-56 md:h-64 object-contain invert brightness-0 drop-shadow"
+            />
           ) : (
             <div className="flex items-center gap-4 sm:gap-6">
               <div className="text-white font-extrabold tracking-tight text-4xl sm:text-5xl">DC</div>

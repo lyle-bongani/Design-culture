@@ -6,13 +6,13 @@ const Header: React.FC = () => {
   return (
     <header className="w-full bg-white">
       <nav className="container mx-auto flex items-center gap-6 px-4 py-4" aria-label="Main">
-        {/* Logo placeholder; replace with your image later */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-3" aria-label="Home">
-          <div className="h-12 w-12 rounded bg-gray-900 text-white grid place-items-center text-lg font-semibold">DC</div>
-          <div className="hidden sm:block">
-            <span className="block text-base font-semibold tracking-wide text-gray-900">DESIGN</span>
-            <span className="block -mt-1 text-sm tracking-wide text-gray-500">CULTURE</span>
-          </div>
+          <img
+            src="/images/logo/DESIGN_CULTURE_LOGO.png"
+            alt="Design Culture logo"
+            className="h-12 sm:h-16 w-auto scale-[1.7] sm:scale-[2.125] ml-3 sm:ml-4"
+          />
         </Link>
 
         {/* Spacer pushes the following group to the far right */}

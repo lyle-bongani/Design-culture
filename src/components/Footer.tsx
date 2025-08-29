@@ -8,14 +8,11 @@ const Footer: React.FC = () => {
         {/* Top brand row */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-3">
-              <div className="text-white font-extrabold tracking-tight text-2xl sm:text-3xl">DC</div>
-              <div className="hidden sm:block h-8 w-px bg-white/40" />
-              <div className="hidden sm:block">
-                <div className="text-white font-extrabold tracking-wide text-sm leading-none">DESIGN</div>
-                <div className="text-white font-extrabold tracking-wide text-sm leading-none">CULTURE</div>
-              </div>
-            </div>
+            <img
+              src="/images/logo/DESIGN_CULTURE_LOGO.png"
+              alt="Design Culture logo"
+              className="h-12 sm:h-16 w-auto invert brightness-0 scale-[2] sm:scale-[2.5] ml-3 sm:ml-4"
+            />
           </div>
           <div className="flex items-center gap-3">
             {[0,1,2].map((i) => (

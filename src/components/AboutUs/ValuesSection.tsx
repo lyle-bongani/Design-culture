@@ -1,4 +1,5 @@
 import React from 'react';
+import Handshake from '@mui/icons-material/Handshake';
 
 const values = [
   {
@@ -20,12 +21,8 @@ const values = [
 ];
 
 const IconBadge = () => (
-  <div className="absolute top-10 left-1/2 -translate-x-1/2 grid place-items-center h-14 w-14 rounded-full bg-[#1F2429] ring-4 ring-white">
-    {/* Handshake style simple icon */}
-    <svg viewBox="0 0 24 24" className="h-8 w-8 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M8 12l2 2 4-4" />
-      <path d="M3 12c2-3 5-5 9-5s7 2 9 5" />
-    </svg>
+  <div className="absolute top-10 left-1/2 -translate-x-1/2 grid place-items-center h-14 w-14 rounded-full bg-[#1F2429] ring-4 ring-white text-white">
+    <Handshake sx={{ fontSize: 30 }} />
   </div>
 );
 
@@ -40,7 +37,7 @@ const ValuesSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-x-5 gap-y-6 md:grid-cols-2">
           {values.map((v, idx) => (
             <div key={idx} className="relative pt-20">
               <IconBadge />

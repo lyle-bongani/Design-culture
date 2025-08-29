@@ -1,4 +1,7 @@
 import React from 'react';
+import Facebook from '@mui/icons-material/Facebook';
+import Twitter from '@mui/icons-material/Twitter';
+import Instagram from '@mui/icons-material/Instagram';
 
 type Member = {
   name: string;
@@ -17,11 +20,15 @@ const members: Member[] = [
 
 const SocialRow = () => (
   <div className="mt-3 flex items-center justify-center gap-3 text-gray-700">
-    {[0,1,2].map((i)=> (
-      <div key={i} className="flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-black/10 bg-black/10 text-gray-800">
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg>
-      </div>
-    ))}
+    <button type="button" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full ring-4 ring-black/10 bg-black/10 text-gray-800 hover:bg-gray-900 hover:text-white transition">
+      <Facebook fontSize="small" />
+    </button>
+    <button type="button" aria-label="Twitter" className="flex h-9 w-9 items-center justify-center rounded-full ring-4 ring-black/10 bg-black/10 text-gray-800 hover:bg-gray-900 hover:text-white transition">
+      <Twitter fontSize="small" />
+    </button>
+    <button type="button" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full ring-4 ring-black/10 bg-black/10 text-gray-800 hover:bg-gray-900 hover:text-white transition">
+      <Instagram fontSize="small" />
+    </button>
   </div>
 );
 

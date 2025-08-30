@@ -4,7 +4,6 @@ const fileToAlt = (filename: string) => filename.replace(/\.[^.]+$/, '').replace
 
 const TrustedClients: React.FC = () => {
   const [files, setFiles] = useState<string[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -32,10 +31,7 @@ const TrustedClients: React.FC = () => {
           'download (8).jpg',
           '34686245_1915829378468831_6804840750925217792_n (1).jpg',
         ];
-        if (!cancelled) {
-          setFiles(fallback);
-          setError('');
-        }
+        if (!cancelled) setFiles(fallback);
       });
     return () => {
       cancelled = true;

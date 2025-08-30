@@ -30,7 +30,7 @@ const CompanySummary: React.FC = () => {
         </div>
 
         {/* Copy */}
-        <p className="text-[13px] sm:text-sm leading-5 text-gray-800">
+        <p className="text-left text-[13px] sm:text-sm leading-5 text-gray-800">
           Design Culture is a Zimbabwean graphic design firm that delivers impactful branding, print, and digital design
           solutions. With over five years of experience, our skilled team transforms brand identities into powerful visual
           stories that connect with audiences and drive results.

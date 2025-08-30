@@ -7,6 +7,7 @@ type Pillar = {
   title: string;
   desc: string;
   img?: string;
+  iconSrc?: string;
 };
 
 const pillars: Pillar[] = [
@@ -17,6 +18,7 @@ const pillars: Pillar[] = [
     desc:
       "At Design Culture, we believe every brand has a unique soul waiting to be revealed. Our process begins with discovery—uncovering your mission, vision, and audience. We sketch and develop visual concepts that reflect your brand essence, then refine color, typography, and elements into a cohesive identity. Finally, we deliver a polished logo built to inspire across all platforms.",
     img: '/images/pics/branding.jpg',
+    iconSrc: '/images/icons/branding.png',
   },
   {
     id: 'print',
@@ -24,7 +26,8 @@ const pillars: Pillar[] = [
     title: 'Print Design',
     desc:
       "We design brochures and flyers that grab attention and deliver your message with impact. Our business cards impress with standout designs and premium finishes. Bold posters and banners bring your events and promotions to life. We craft packaging that enhances brand presence and customer experience. Every piece reflects your brand’s unique identity with creativity and intention.",
-    img: '/images/pics/print.jpg',
+    img: '/images/pics/Print Design.jpg',
+    iconSrc: '/images/icons/print.png',
   },
   {
     id: 'indoor-outdoor',
@@ -32,7 +35,8 @@ const pillars: Pillar[] = [
     title: 'Indoor & Outdoor Branding',
     desc:
       "Play your best game in our custom sublimated golf shirts by Design Culture—made for comfort, performance, and style on the course. Not readily available? We create them per order only to ensure a perfect fit and unique design every time.",
-    img: '/images/pics/indoor-outdoor.jpg',
+    img: '/images/pics/Indoor & Outdoor Branding.jpg',
+    iconSrc: '/images/icons/sewing.png',
   },
   {
     id: 'digital',
@@ -40,7 +44,8 @@ const pillars: Pillar[] = [
     title: 'Digital Design',
     desc:
       "We design user-friendly websites that reflect your brand, craft captivating social visuals to boost engagement, and manage your digital presence with consistent messaging across platforms.",
-    img: '/images/pics/digital-design.jpg',
+    img: '/images/pics/Digital Design.jpg',
+    iconSrc: '/images/icons/digital-drawing.png',
   },
   {
     id: 'sublimated-apparel',
@@ -48,7 +53,8 @@ const pillars: Pillar[] = [
     title: 'Design & Print Sublimated Apparel',
     desc:
       "From vibrant custom T-shirts and high-quality sports jerseys to sleek corporate apparel and eye-catching merchandise—we bring your brand to life through durable, sublimated designs tailored for any occasion.",
-    img: '/images/pics/sublimated-apparel.jpg',
+    img: '/images/pics/Design & Print Sublimated Apparel.jpg',
+    iconSrc: '/images/icons/print (1).png',
   },
   {
     id: 'marketing',
@@ -56,7 +62,8 @@ const pillars: Pillar[] = [
     title: 'Marketing Collateral',
     desc:
       "We craft compelling marketing materials—from informative flyers and bold posters to detailed brochures that reflect your brand and captivate your audience. Every piece is tailored to spark interest and leave a lasting impression.",
-    img: '/images/pics/marketing-collateral.jpg',
+    img: '/images/pics/Marketing Collateral.jpg',
+    iconSrc: '/images/icons/marketing.png',
   },
 ];
 
@@ -66,13 +73,17 @@ const NumberBadge: React.FC<{ n: string }> = ({ n }) => (
   </div>
 );
 
-const IconBadge: React.FC = () => (
-  <div className="grid h-12 w-12 place-items-center rounded-full bg-gray-900 text-white ring-4 ring-white shadow-lg">
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg>
+const IconBadge: React.FC<{ src?: string; alt?: string }> = ({ src, alt }) => (
+  <div className="grid h-12 w-12 place-items-center rounded-full bg-gray-900 text-white ring-4 ring-white shadow-lg overflow-hidden">
+    {src ? (
+      <img src={src} alt={alt || 'icon'} className="h-7 w-7 object-contain filter brightness-0 invert" />
+    ) : (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg>
+    )}
   </div>
 );
 
-const PillarCard: React.FC<Pillar> = ({ id, number, title, desc, img }) => (
+const PillarCard: React.FC<Pillar> = ({ id, number, title, desc, img, iconSrc }) => (
   <div className="relative rounded-2xl bg-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/10">
     <NumberBadge n={number} />
     {/* Image area */}
@@ -87,7 +98,7 @@ const PillarCard: React.FC<Pillar> = ({ id, number, title, desc, img }) => (
     <div className="relative">
       <div className="h-1 w-full bg-gray-300" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-        <IconBadge />
+        <IconBadge src={iconSrc} alt={title} />
       </div>
     </div>
     {/* Text area */}
@@ -117,7 +128,7 @@ const ServicePillars: React.FC = () => {
           <div className="mx-auto h-72 w-3/4 rounded-full bg-gradient-to-b from-gray-200/60 to-transparent blur-2xl" />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-12">
           {pillars.map((p) => (
             <PillarCard key={p.id} {...p} />
           ))}

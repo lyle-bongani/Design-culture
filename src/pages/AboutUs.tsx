@@ -15,7 +15,7 @@ const AboutUs: React.FC = () => {
         <img
           src="/images/pics/aboutpagehero.jpg"
           alt="About Design Culture"
-          className="h-[520px] w-full object-cover sm:h-[560px] md:h-[600px]"
+          className="w-full object-cover object-center h-[85vh] md:h-[520px] lg:h-[640px] xl:h-[720px]"
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60" />
@@ -24,7 +24,14 @@ const AboutUs: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
           <div className="max-w-3xl text-center text-white">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">About Us</h1>
-            <div className="mt-5 space-y-3 text-xs sm:text-sm leading-5 sm:leading-6 text-white/95">
+
+            {/* Mobile short summary */}
+            <p className="mt-4 text-sm leading-6 text-white/95 sm:hidden">
+              Where creativity meets purpose—meaningful design that connects people to brands.
+            </p>
+
+            {/* Full copy for sm and up */}
+            <div className="hidden sm:block mt-5 space-y-3 text-sm leading-6 text-white/95">
               <p>
                 Design Culture is a Zimbabwean registered company which is a leading graphic design firm that specializes in
                 providing creative and innovative design solutions to businesses of all sizes. With a team of highly skilled and

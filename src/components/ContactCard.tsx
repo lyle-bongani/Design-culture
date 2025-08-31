@@ -18,11 +18,11 @@ const ContactCard: React.FC = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 -mt-8 sm:-mt-10 md:-mt-14 pb-10">
+    <section className="container mx-auto px-4 -mt-10 sm:-mt-14 md:-mt-16 pb-10 relative z-10">
       <div className="mx-auto max-w-4xl rounded-2xl bg-white ring-1 ring-black/10 shadow-[0_12px_40px_rgba(0,0,0,0.16)]">
         <div className="grid grid-cols-1 gap-8 p-6 sm:p-8 md:grid-cols-2">
           {/* Left: contact details */}
-          <div>
+          <div className="text-left">
             <h3 className="text-lg font-extrabold text-gray-900">Head Office</h3>
             <p className="mt-1 text-sm text-gray-600">54 Jason Moyo | Three Anchor House<br/>Harare | Zimbabwe</p>
 

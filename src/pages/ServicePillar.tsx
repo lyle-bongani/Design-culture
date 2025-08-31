@@ -8,7 +8,7 @@ const ServicePillar: React.FC = () => {
     <>
       <ServicePillarHero />
       <ServicePillarGrid />
-      <ServicePillarBanner />
+      <ServicePillarBanner imageSrc="/images/pics/mostgenericimageever.jpeg" />
     </>
   );
 };

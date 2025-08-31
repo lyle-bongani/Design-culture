@@ -9,7 +9,7 @@ type Props = {
 const ContactHero: React.FC<Props> = ({
   title = 'Contact Us',
   subtitle = "For inquiries, partnerships, or service info, reach out to us. We're here to help you optimize your business solutions.",
-  imageSrc = '/images/pics/contact-hero.jpg',
+  imageSrc = '/images/pics/closeup-office-wired-telephone.jpg',
 }) => {
   return (
     <section className="container mx-auto px-4 pt-6 sm:pt-8">
@@ -20,8 +20,8 @@ const ContactHero: React.FC<Props> = ({
           alt={title}
           className="h-[260px] w-full object-cover sm:h-[340px] md:h-[420px]"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        {/* Darkest navy overlay (rgb(17,24,39)) */}
+        <div className="absolute inset-0 bg-[rgb(17,24,39)]/80" />
         {/* Centered content */}
         <div className="absolute inset-0 grid place-items-center px-6 text-center">
           <div>

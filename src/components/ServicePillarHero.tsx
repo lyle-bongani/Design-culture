@@ -7,7 +7,7 @@ type Props = {
 };
 
 const ServicePillarHero: React.FC<Props> = ({
-  imageSrc = '/images/pics/servicepillar-hero.jpg',
+  imageSrc = '/images/pics/servicespillarhero.jpg',
   title = 'Design Culture',
   desc =
     'Empowering Brands with Bold Design Solutions. We connect businesses with cutting-edge graphic design that sparks engagement, drives visibility, and elevates brand impact. From logos to digital media, we deliver innovative visuals that tell your story and boost results. Let our design expertise be the catalyst that moves your brand forward.',
@@ -25,12 +25,14 @@ const ServicePillarHero: React.FC<Props> = ({
         </div>
 
         {/* Overlapping info card */}
-        <div className="pointer-events-auto mx-auto -mt-12 w-full max-w-4xl rounded-2xl bg-white px-6 py-6 text-center ring-1 ring-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.12)] sm:px-8 sm:py-7">
-          <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gray-900 text-white ring-4 ring-white shadow">
-            {/* placeholder icon */}
-            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-              <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5.33 0-8 2.67-8 5v1h16v-1c0-2.33-2.67-5-8-5Z" />
-            </svg>
+        <div className="pointer-events-auto relative z-10 mx-auto -mt-6 sm:-mt-10 md:-mt-12 w-full max-w-4xl rounded-2xl bg-white px-6 py-6 text-center ring-1 ring-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.12)] sm:px-8 sm:py-7">
+          <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gray-900 text-white ring-4 ring-white shadow overflow-hidden">
+            <img
+              src="/images/icons/satisfaction.png"
+              alt="Satisfaction"
+              className="h-6 w-6 object-contain filter brightness-0 invert"
+              loading="lazy"
+            />
           </div>
           <h1 className="mt-3 text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">
             {title}

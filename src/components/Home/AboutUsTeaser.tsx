@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutUsTeaser: React.FC = () => {
   return (
@@ -14,12 +15,12 @@ const AboutUsTeaser: React.FC = () => {
             <span className="font-semibold text-gray-900"> effective design for over 5 years</span>...........
           </p>
           <div className="mt-7 flex justify-center">
-            <a
-              href="#about"
+            <Link
+              to="/about-us"
               className="inline-flex items-center rounded-full bg-gray-900 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
             >
               Read More
-            </a>
+            </Link>
           </div>
         </div>
 

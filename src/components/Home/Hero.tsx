@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type HeroProps = {
   backgroundUrl?: string; // optional background image URL to be provided later
@@ -32,18 +33,18 @@ const Hero: React.FC<HeroProps> = ({ backgroundUrl }) => {
               Helping businesses stand out through bold designs and strategic branding.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#get-started"
+              <Link
+                to="/contact-us"
                 className="inline-flex items-center rounded-full bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
               >
                 Get Started
-              </a>
-              <a
-                href="#projects"
+              </Link>
+              <Link
+                to="/services"
                 className="inline-flex items-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-base font-semibold text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               >
                 Our Projects
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -154,14 +154,16 @@ const Header: React.FC = () => {
           <div className="mt-6 border-t border-gray-200 pt-4">
             <p className="text-xs text-gray-500 mb-3">Connect with us</p>
             <div className="flex items-center gap-3">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#0A66C2] text-white">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4.01 0 4.75 2.64 4.75 6.08V24h-4v-7.1c0-1.69-.03-3.87-2.36-3.87-2.36 0-2.72 1.84-2.72 3.75V24h-4V8z"/></svg>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#1877F2] text-white">
+              <a href="https://www.facebook.com/p/Design-Culture-ZW-100063802613214/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#111827] text-white">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3V12h2.3l-.37 3h-1.93v7A10 10 0 0 0 22 12Z"/></svg>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white">
+              <a href="https://www.instagram.com/designculturezw/reels/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#111827] text-white">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@design.culture.zw" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#111827] text-white">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                  <path d="M14.5 2h2.2c.2 1.2 1 2.3 2.1 3 1 .6 2 .8 3.2.8v2.2c-1.4 0-2.8-.4-4.1-1.2v6.8c0 3.7-3 6.6-6.6 6.6S4.7 17.3 4.7 13.6c0-3.1 2.1-5.7 5-6.4v2.4c-1.6.6-2.7 2.1-2.7 4 0 2.3 1.9 4.2 4.2 4.2s4.2-1.9 4.2-4.2V2z" />
+                </svg>
               </a>
             </div>
           </div>

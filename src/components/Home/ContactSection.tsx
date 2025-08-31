@@ -77,13 +77,35 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
             <div className="text-left">
               <div className="font-extrabold text-gray-900 text-left">Follow us on social media</div>
               <div className="mt-3 flex items-center gap-3">
-                {[0,1,2,3].map((i) => (
-                  <div key={i} className="flex h-10 w-10 items-center justify-center rounded-full ring-4 ring-white bg-[#1F2429] text-white shadow">
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" />
-                    </svg>
-                  </div>
-                ))}
+                <a
+                  href="https://www.instagram.com/designculturezw/reels/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-full ring-4 ring-white bg-[#111827] text-white shadow"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@design.culture.zw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className="flex h-10 w-10 items-center justify-center rounded-full ring-4 ring-white bg-[#111827] text-white shadow"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+                    <path d="M14.5 2h2.2c.2 1.2 1 2.3 2.1 3 1 .6 2 .8 3.2.8v2.2c-1.4 0-2.8-.4-4.1-1.2v6.8c0 3.7-3 6.6-6.6 6.6S4.7 17.3 4.7 13.6c0-3.1 2.1-5.7 5-6.4v2.4c-1.6.6-2.7 2.1-2.7 4 0 2.3 1.9 4.2 4.2 4.2s4.2-1.9 4.2-4.2V2z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.facebook.com/p/Design-Culture-ZW-100063802613214/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="flex h-10 w-10 items-center justify-center rounded-full ring-4 ring-white bg-[#111827] text-white shadow"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3V12h2.3l-.37 3h-1.93v7A10 10 0 0 0 22 12Z"/></svg>
+                </a>
               </div>
             </div>
           </div>
@@ -91,11 +113,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
           {/* Right form */}
           <div>
             <h3 className="text-center text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900">Send us a message</h3>
-            <form className="mt-6 space-y-4 text-left" onSubmit={onSubmit}>
+            <form
+              action="https://formsubmit.co/Info@desigculture.co.zw"
+              method="POST"
+              className="mt-6 space-y-4 text-left"
+              onSubmit={onSubmit}
+            >
+              {/* FormSubmit config */}
+              <input type="hidden" name="_subject" value="New website enquiry — Design Culture" />
+              <input type="hidden" name="_captcha" value="true" />
+              {/* Honeypot */}
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-gray-800 text-left">Name</label>
-                  <Field placeholder="Name" name="name" />
+                  <Field placeholder="Name" name="name" required />
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-gray-800 text-left">Company</label>
@@ -109,7 +141,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-gray-800 text-left">Email</label>
-                  <Field placeholder="Email" name="email" type="email" />
+                  <Field placeholder="Email" name="email" type="email" required />
                 </div>
               </div>
               <div>
@@ -118,7 +150,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-semibold text-gray-800 text-left">Message</label>
-                <TextArea placeholder="Message" name="message" rows={5} />
+                <TextArea placeholder="Message" name="message" rows={5} required />
               </div>
               <div className="pt-2">
                 <button type="submit" className="w-full rounded-full bg-[#1F2429] px-6 py-3 text-white font-semibold shadow hover:bg-[#1A1E22]">

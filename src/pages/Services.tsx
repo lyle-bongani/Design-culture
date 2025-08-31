@@ -1,10 +1,19 @@
 import React from 'react';
+import { useSEO } from '../hooks/useSEO';
 import ServicesHero from '../components/ServicesHero';
 import ServicePillars from '../components/ServicePillars';
 import ServicesCTA from '../components/ServicesCTA';
 import ServicesStory from '../components/ServicesStory';
 
 const Services: React.FC = () => {
+  useSEO({
+    title: 'Services — Design Culture',
+    description:
+      'Explore our services: branding, print design, digital design, marketing collateral, and more crafted for impact.',
+    canonicalPath: '/services',
+    ogImage: '/images/pics/servicespillarhero.jpg',
+    twitterCard: 'summary_large_image',
+  });
   return (
     <>
       <ServicesHero />

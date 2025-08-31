@@ -15,14 +15,34 @@ const Footer: React.FC = () => {
             />
           </div>
           <div className="flex items-center gap-3">
-            <a href="https://facebook.com" aria-label="Facebook" className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-white/10 text-white hover:bg-white/20">
+            <a
+              href="https://www.facebook.com/p/Design-Culture-ZW-100063802613214/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-[#111827] text-white hover:opacity-90"
+            >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3V12h2.3l-.37 3h-1.93v7A10 10 0 0 0 22 12Z"/></svg>
             </a>
-            <a href="https://twitter.com" aria-label="Twitter" className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-white/10 text-white hover:bg-white/20">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.2-.7.5-1.7.9-2.6 1.1C18 4.6 17 4 15.8 4c-2.2 0-3.9 2.1-3.4 4.2-3.1-.1-5.8-1.6-7.6-3.8C4.1 6 4.6 8 6.2 9c-.6 0-1.2-.2-1.8-.5 0 1.8 1.3 3.4 3.2 3.8-.6.2-1.3.2-1.9.1.5 1.6 2 2.7 3.8 2.8C7.4 16 5.7 16.6 4 16.5c1.8 1.1 3.9 1.8 6.1 1.8 7.4 0 11.6-6.3 11.4-12 0-.2 0-.3 0-.5.8-.5 1.5-1.2 2.1-2Z"/></svg>
+            <a
+              href="https://www.tiktok.com/@design.culture.zw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-[#111827] text-white hover:opacity-90"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M14.5 2h2.2c.2 1.2 1 2.3 2.1 3 1 .6 2 .8 3.2.8v2.2c-1.4 0-2.8-.4-4.1-1.2v6.8c0 3.7-3 6.6-6.6 6.6S4.7 17.3 4.7 13.6c0-3.1 2.1-5.7 5-6.4v2.4c-1.6.6-2.7 2.1-2.7 4 0 2.3 1.9 4.2 4.2 4.2s4.2-1.9 4.2-4.2V2z" />
+              </svg>
             </a>
-            <a href="https://instagram.com" aria-label="Instagram" className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-white/10 text-white hover:bg-white/20">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+            <a
+              href="https://www.instagram.com/designculturezw/reels/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-11 w-11 items-center justify-center rounded-full ring-4 ring-white/10 bg-[#111827] text-white hover:opacity-90"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10 1.5a1 1 0 1 0 0 2 1  1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
             </a>
           </div>
         </div>
@@ -31,7 +51,7 @@ const Footer: React.FC = () => {
         <div className="mt-6 h-px w-full bg-white/30" />
 
         {/* Middle columns */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-8">
           {/* Head Office */}
           <div>
             <h4 className="font-extrabold mb-4">Head Office</h4>
@@ -56,20 +76,44 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-extrabold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-white/90 text-sm">
+              <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:underline">Terms of Service</Link></li>
+              <li><Link to="/disclaimer" className="hover:underline">Disclaimer</Link></li>
+              <li><Link to="/credits" className="hover:underline">Credits</Link></li>
+            </ul>
+          </div>
+
           {/* Newsletter */}
           <div>
             <h4 className="font-extrabold mb-4">Newsletter</h4>
             <p className="text-sm text-white/90">Get exclusive news by signing up to our Newsletter</p>
-            <div className="mt-4 flex flex-col gap-3">
+            <form
+              action="https://formsubmit.co/Info@desigculture.co.zw"
+              method="POST"
+              className="mt-4 flex flex-col gap-3"
+            >
+              {/* FormSubmit config */}
+              <input type="hidden" name="_subject" value="Newsletter signup — Design Culture" />
+              <input type="hidden" name="_captcha" value="true" />
+              {/* Honeypot */}
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+              <label className="sr-only" htmlFor="newsletter-email">Email</label>
               <input
+                id="newsletter-email"
+                name="email"
                 type="email"
+                required
                 placeholder="Email"
                 className="w-full rounded-full bg-white text-gray-900 placeholder:text-gray-500 px-4 py-2 shadow focus:outline-none"
               />
-              <button className="w-full rounded-full border border-white/60 px-4 py-2 text-white bg-transparent hover:bg-white/10">
+              <button type="submit" className="w-full rounded-full border border-white/60 px-4 py-2 text-white bg-transparent hover:bg-white/10">
                 Sign Up
               </button>
-            </div>
+            </form>
           </div>
         </div>
 

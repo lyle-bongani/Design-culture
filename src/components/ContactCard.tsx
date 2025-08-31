@@ -13,10 +13,6 @@ const InfoRow: React.FC<{ icon: React.ReactNode; title: string; children: React.
 );
 
 const ContactCard: React.FC = () => {
-  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <section className="container mx-auto px-4 -mt-10 sm:-mt-14 md:-mt-16 pb-10 relative z-10">
       <div className="mx-auto max-w-4xl rounded-2xl bg-white ring-1 ring-black/10 shadow-[0_12px_40px_rgba(0,0,0,0.16)]">
@@ -75,30 +71,39 @@ const ContactCard: React.FC = () => {
           {/* Right: form */}
           <div>
             <h3 className="text-lg font-extrabold text-gray-900">Send us a message</h3>
-            <form onSubmit={onSubmit} className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <form
+              action="https://formsubmit.co/Info@desigculture.co.zw"
+              method="POST"
+              className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2"
+            >
+              {/* FormSubmit config */}
+              <input type="hidden" name="_subject" value="New website enquiry — Design Culture" />
+              <input type="hidden" name="_captcha" value="true" />
+              {/* Honeypot field */}
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
               <div>
                 <label className="sr-only">Name</label>
-                <input className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Name" />
+                <input name="name" required className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Name" />
               </div>
               <div>
                 <label className="sr-only">Company</label>
-                <input className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Company" />
+                <input name="company" className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Company" />
               </div>
               <div>
                 <label className="sr-only">Phone</label>
-                <input className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Phone" />
+                <input name="phone" type="tel" className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Phone" />
               </div>
               <div>
                 <label className="sr-only">Email</label>
-                <input type="email" className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Email" />
+                <input name="email" type="email" required className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Email" />
               </div>
               <div className="sm:col-span-2">
                 <label className="sr-only">Subject</label>
-                <input className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Subject" />
+                <input name="subject" className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Subject" />
               </div>
               <div className="sm:col-span-2">
                 <label className="sr-only">Message</label>
-                <textarea rows={4} className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Message" />
+                <textarea name="message" required rows={4} className="w-full rounded-md ring-1 ring-black/10 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900" placeholder="Message" />
               </div>
               <div className="sm:col-span-2">
                 <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSEO } from '../hooks/useSEO';
 import Hero from '../components/Home/Hero';
 import UnderHeroSection from '../components/Home/UnderHeroSection';
 import AboutUsTeaser from '../components/Home/AboutUsTeaser';
@@ -10,6 +11,14 @@ import BrandShowcase from '../components/Home/BrandShowcase';
 import ContactSection from '../components/Home/ContactSection';
 
 const Home: React.FC = () => {
+  useSEO({
+    title: 'Design Culture — Zimbabwe Graphic Design & Branding Agency',
+    description:
+      'Design Culture is a Zimbabwean graphic design and branding agency delivering logos, print, digital design, and marketing collateral.',
+    canonicalPath: '/',
+    ogImage: '/images/pics/homehero.jpg',
+    twitterCard: 'summary_large_image',
+  });
   return (
     <>
       <div className="container mx-auto px-4 relative h-0">

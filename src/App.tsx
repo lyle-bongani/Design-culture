@@ -13,6 +13,8 @@ import TermsOfService from './pages/TermsOfService';
 import Disclaimer from './pages/Disclaimer';
 import Credits from './pages/Credits';
 import FloatingButtons from './components/FloatingButtons';
+import NotFound from './pages/NotFound';
+import Maintenance from './pages/Maintenance';
 
 // Scroll to top on route change
 const ScrollToTop: React.FC = () => {
@@ -39,6 +41,8 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/credits" element={<Credits />} />
+          <Route path="/maintenance" element={<Maintenance />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <FloatingButtons />

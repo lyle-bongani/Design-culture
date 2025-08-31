@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type ServiceItem = {
   title: string;
@@ -90,13 +91,13 @@ const Services: React.FC<ServicesProps> = ({ items = DefaultItems, onSeeAllClick
           ))}
         </div>
         <div className="mt-8 flex justify-center">
-          <button
-            type="button"
+          <Link
+            to="/services"
             onClick={onSeeAllClick}
             className="rounded-full bg-white/90 px-6 py-3 text-sm sm:text-base font-semibold text-gray-900 shadow hover:bg-white"
           >
             See All
-          </button>
+          </Link>
         </div>
       </div>
     </section>

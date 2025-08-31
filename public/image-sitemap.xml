@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace PLACEHOLDER_BASE_URL with your canonical site URL, e.g., https://www.yourdomain.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>PLACEHOLDER_BASE_URL/</loc>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/logo/DESIGN_CULTURE_LOGO.png</image:loc>
+      <image:title>Design Culture Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/homehero.jpg</image:loc>
+      <image:title>Home Hero</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>PLACEHOLDER_BASE_URL/about-us</loc>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/aboutpagehero.jpg</image:loc>
+      <image:title>About Page Hero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/abouthhero.jpg</image:loc>
+      <image:title>About Hero Alt</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>PLACEHOLDER_BASE_URL/services</loc>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/servicespillarhero.jpg</image:loc>
+      <image:title>Services Pillar Hero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/branding.jpg</image:loc>
+      <image:title>Branding</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/icons/branding.png</image:loc>
+      <image:title>Branding Icon</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>PLACEHOLDER_BASE_URL/contact-us</loc>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/phone.png</image:loc>
+      <image:title>Contact Phone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>PLACEHOLDER_BASE_URL/images/pics/closeup-office-wired-telephone.jpg</image:loc>
+      <image:title>Office Phone</image:title>
+    </image:image>
+  </url>
+</urlset>

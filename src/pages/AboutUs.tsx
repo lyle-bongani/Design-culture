@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSEO } from '../hooks/useSEO';
 import AboutOverview from '../components/AboutUs/AboutOverview';
 import ValuesSection from '../components/AboutUs/ValuesSection';
 import LeadershipTeam from '../components/AboutUs/LeadershipTeam';
@@ -7,6 +8,14 @@ import TrustedClients from '../components/AboutUs/TrustedClients';
 import ContactCTA from '../components/AboutUs/ContactCTA';
 
 const AboutUs: React.FC = () => {
+  useSEO({
+    title: 'About Us — Design Culture',
+    description:
+      'Learn about Design Culture: a Zimbabwean design studio crafting branding, print, and digital experiences that connect people to brands.',
+    canonicalPath: '/about-us',
+    ogImage: '/images/pics/aboutpagehero.jpg',
+    twitterCard: 'summary_large_image',
+  });
   return (
     <>
     <section className="container mx-auto px-4 py-10 sm:py-12">

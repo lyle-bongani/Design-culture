@@ -10,12 +10,12 @@ type Member = {
 };
 
 const members: Member[] = [
-  { name: 'Ethel Muza', role: 'Digital Marketer', img: '/images/team/Ethel-Muza.jpg' },
-  { name: 'Brian Makwindi', role: 'Founder', img: '/images/team/Brian-Makwindi.jpg' },
-  { name: 'Panashe Bwanali', role: 'Graphic Designer', img: '/images/team/Panashe-Bwanali.jpg' },
-  { name: 'Brilliant Muchima', role: 'Illustrator', img: '/images/team/Brilliant-Muchima.jpeg' },
-  { name: 'Portia Karisa', role: 'Executive Assistant', img: '/images/team/Portia-Karisa.jpg' },
-  { name: 'Micheal Anesu Maposa', role: 'Web Developer', img: '/images/team/Micheal-Anesu-Maposa.jpg' },
+  { name: 'Ethel Muza', role: 'Digital Marketer', img: '/images/team/Ethel Muza.jpg' },
+  { name: 'Brian Makwindi', role: 'Founder', img: '/images/team/Brian Makwindi.jpg' },
+  { name: 'Panashe Bwanali', role: 'Graphic Designer', img: '/images/team/Panashe Bwanali.jpg' },
+  { name: 'Brilliant Muchima', role: 'Illustrator', img: '/images/team/Brilliant Muchima.jpeg' },
+  { name: 'Portia Karisa', role: 'Executive Assistant', img: '/images/team/Portia Karisa.jpg' },
+  { name: 'Micheal Anesu Maposa', role: 'Web Developer', img: '/images/team/Micheal Anesu Maposa.jpg' },
 ];
 
 const SocialRow = () => (

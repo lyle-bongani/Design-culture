@@ -1,12 +1,12 @@
 import React from 'react';
 
 const avatars = [
-  '/images/team/Ethel-Muza.jpg',
-  '/images/team/Brian-Makwindi.jpg',
-  '/images/team/Panashe-Bwanali.jpg',
-  '/images/team/Brilliant-Muchima.jpeg',
-  '/images/team/Portia-Karisa.jpg',
-  '/images/team/Micheal-Anesu-Maposa.jpg',
+  '/images/team/Ethel Muza.jpg',
+  '/images/team/Brian Makwindi.jpg',
+  '/images/team/Panashe Bwanali.jpg',
+  '/images/team/Brilliant Muchima.jpeg',
+  '/images/team/Portia Karisa.jpg',
+  '/images/team/Micheal Anesu Maposa.jpg',
 ];
 
 const CompanySummary: React.FC = () => {

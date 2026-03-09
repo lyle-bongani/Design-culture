@@ -18,6 +18,55 @@ const Home: React.FC = () => {
     canonicalPath: '/',
     ogImage: '/images/pics/homehero.jpg',
     twitterCard: 'summary_large_image',
+    keywords: 'Graphic Design, Branding Agency, Zimbabwe, Logo Design, Digital Design, Print Design, Marketing Collateral',
+    author: 'Design Culture',
+    themeColor: '#1F2429',
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'Design Culture',
+        description: 'Design Culture is a Zimbabwean graphic design and branding agency delivering logos, print, digital design, and marketing collateral.',
+        url: 'https://designculture.co.zw',
+        logo: 'https://designculture.co.zw/images/logo/DESIGN_CULTURE_LOGO.png',
+        image: 'https://designculture.co.zw/images/pics/homehero.jpg',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Harare',
+          addressCountry: 'ZW'
+        }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Design Culture',
+        url: 'https://designculture.co.zw'
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: [
+          {
+            '@type': 'SiteNavigationElement',
+            position: 1,
+            name: 'Services',
+            url: 'https://designculture.co.zw/services'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 2,
+            name: 'About Us',
+            url: 'https://designculture.co.zw/about-us'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 3,
+            name: 'Contact Us',
+            url: 'https://designculture.co.zw/contact-us'
+          }
+        ]
+      }
+    ]
   });
   return (
     <>

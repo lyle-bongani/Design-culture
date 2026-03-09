@@ -7,6 +7,10 @@ export type SEOOptions = {
   noindex?: boolean; // add noindex robots
   ogImage?: string; // absolute or root-relative path
   twitterCard?: 'summary' | 'summary_large_image';
+  keywords?: string; // comma separated keywords
+  author?: string; // author name
+  themeColor?: string; // hex color code
+  jsonLd?: Record<string, any> | Record<string, any>[]; // Structured Data
 };
 
 function upsertMetaByName(name: string, content: string) {
@@ -88,7 +92,50 @@ export function useSEO(opts: SEOOptions) {
       const robots = document.head.querySelector('meta[name="robots"]');
       if (robots) robots.setAttribute('content', 'index, follow');
     }
-  }, [opts.title, opts.description, opts.canonicalPath, opts.noindex, opts.ogImage, opts.twitterCard]);
+
+    // Keywords
+    if (opts.keywords) {
+      upsertMetaByName('keywords', opts.keywords);
+    }
+
+    // Author
+    if (opts.author) {
+      upsertMetaByName('author', opts.author);
+    }
+
+    // Theme Color
+    if (opts.themeColor) {
+      upsertMetaByName('theme-color', opts.themeColor);
+    }
+
+    // JSON-LD (Structured Data)
+    if (opts.jsonLd) {
+      let script = document.head.querySelector('script[type="application/ld+json"]') as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(opts.jsonLd);
+    } else {
+      // Remove any existing JSON-LD if not provided for this route
+      const script = document.head.querySelector('script[type="application/ld+json"]');
+      if (script) {
+        document.head.removeChild(script);
+      }
+    }
+  }, [
+    opts.title,
+    opts.description,
+    opts.canonicalPath,
+    opts.noindex,
+    opts.ogImage,
+    opts.twitterCard,
+    opts.keywords,
+    opts.author,
+    opts.themeColor,
+    opts.jsonLd
+  ]);
 }
 
 export default useSEO;

@@ -13,6 +13,19 @@ const Services: React.FC = () => {
     canonicalPath: '/services',
     ogImage: '/images/pics/servicespillarhero.jpg',
     twitterCard: 'summary_large_image',
+    keywords: 'Branding Services, Print Design, Digital Design, Marketing Collateral, Logo Creation Zimbabwe',
+    author: 'Design Culture',
+    themeColor: '#1F2429',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Graphic Design and Branding',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'Design Culture'
+      },
+      description: 'Explore our services: branding, print design, digital design, marketing collateral, and more crafted for impact.'
+    }
   });
   return (
     <>

@@ -15,6 +15,20 @@ const AboutUs: React.FC = () => {
     canonicalPath: '/about-us',
     ogImage: '/images/pics/aboutpagehero.jpg',
     twitterCard: 'summary_large_image',
+    keywords: 'About Design Culture, Graphic Design Studio Zimbabwe, Branding Experts, Digital Experience',
+    author: 'Design Culture',
+    themeColor: '#1F2429',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Design Culture',
+        description: 'Design Culture is a Zimbabwean registered company which is a leading graphic design firm that specializes in providing creative and innovative design solutions.',
+        url: 'https://designculture.co.zw/about-us',
+        logo: 'https://designculture.co.zw/images/logo/DESIGN_CULTURE_LOGO.png'
+      }
+    }
   });
   return (
     <>

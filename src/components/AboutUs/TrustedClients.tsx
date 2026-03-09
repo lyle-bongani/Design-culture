@@ -24,12 +24,12 @@ const TrustedClients: React.FC = () => {
           'Magaya-Logo-High-Res-1024x964.jpg',
           'Moore_Global.png',
           'Peterhouse-Crest.jpg',
-          'svh-e1642588108123-1024x872.png',
           'loho.png',
           'DAIZ_bZXcAI0hhg.png',
           'images (12).png',
           'download (8).jpg',
-          '34686245_1915829378468831_6804840750925217792_n (1).jpg',
+          'HLLC Logo.jpg',
+          'TENNIS ZIMBABWE Logo org.jpg',
         ];
         if (!cancelled) setFiles(fallback);
       });

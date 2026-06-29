@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <img
               src="/images/logo/DESIGN_CULTURE_LOGO.png"
               alt="Design Culture logo"
-              className="h-12 sm:h-16 w-auto invert brightness-0 scale-[2] sm:scale-[2.5] ml-3 sm:ml-4"
+              className="h-24 sm:h-32 lg:h-36 w-auto invert brightness-0 ml-3 sm:ml-4"
             />
           </div>
           <div className="flex items-center gap-3">

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           <img
             src="/images/logo/DESIGN_CULTURE_LOGO.png"
             alt="Design Culture logo"
-            className="h-12 sm:h-16 w-auto scale-[1.7] sm:scale-[2.125] ml-3 sm:ml-4"
+            className="h-16 md:h-20 lg:h-24 w-auto ml-3 sm:ml-4"
           />
         </Link>
 
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         <div className="flex-1" />
 
         {/* Right group: nav links + CTA close together (desktop) */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <ul className="flex items-center gap-6 text-base">
             <li>
               <NavLink to="/" end className={({isActive})=> `px-4 py-1.5 rounded-full ${isActive? 'bg-gray-200 text-gray-900':'text-gray-600 hover:text-gray-900'}`}>
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
         {/* Mobile: Hamburger */}
         <button
           type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:bg-gray-50"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:bg-gray-50"
           aria-label="Open menu"
           aria-controls="mobile-menu"
           aria-expanded={open}
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
     {/* Mobile side drawer */}
       {/* Backdrop */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/40 transition-opacity duration-200 z-[90] ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`lg:hidden fixed inset-0 bg-black/40 transition-opacity duration-200 z-[90] ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         aria-hidden={!open}
         onClick={() => setOpen(false)}
       />
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
       <aside
         role="dialog"
         aria-modal="true"
-        className={`md:hidden fixed right-0 top-0 h-full w-80 max-w-[88vw] bg-white shadow-xl border-l border-gray-200 transition-transform duration-200 ease-out z-[100] ${open ? 'translate-x-0' : 'translate-x-full'} rounded-l-2xl overflow-hidden`}
+        className={`lg:hidden fixed right-0 top-0 h-full w-80 max-w-[88vw] bg-white shadow-xl border-l border-gray-200 transition-transform duration-200 ease-out z-[100] ${open ? 'translate-x-0' : 'translate-x-full'} rounded-l-2xl overflow-hidden`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
           <div className="flex items-center gap-3">

@@ -16,7 +16,7 @@ const AboutOverview: React.FC = () => {
         </div>
 
         {/* Right stacked cards */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 justify-between h-full">
           {/* Vision */}
           <div className="relative rounded-2xl bg-[#1F2429] text-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.18)] ring-1 ring-white/10">
             <div className="flex flex-col items-center text-center gap-2">

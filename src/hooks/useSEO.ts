@@ -1,17 +1,6 @@
 import { useEffect } from 'react';
-
-export type SEOOptions = {
-  title?: string;
-  description?: string;
-  canonicalPath?: string; // e.g. "/services"
-  noindex?: boolean; // add noindex robots
-  ogImage?: string; // absolute or root-relative path
-  twitterCard?: 'summary' | 'summary_large_image';
-  keywords?: string; // comma separated keywords
-  author?: string; // author name
-  themeColor?: string; // hex color code
-  jsonLd?: Record<string, any> | Record<string, any>[]; // Structured Data
-};
+import { Metadata, generateMetadata } from '../lib/seo/metadata';
+import { SEO_CONFIG } from '../lib/seo/config';
 
 function upsertMetaByName(name: string, content: string) {
   if (!content) return;
@@ -46,96 +35,101 @@ function upsertLink(rel: string, href: string) {
   link.setAttribute('href', href);
 }
 
-export function useSEO(opts: SEOOptions) {
+export function useSEO(opts: Metadata & { jsonLd?: Record<string, unknown> | Record<string, unknown>[] }) {
   useEffect(() => {
-    const origin = window.location.origin;
+    // Generate standardized metadata matching the Next.js Metadata architecture
+    const meta = generateMetadata(opts);
 
     // Title
-    if (opts.title) {
-      document.title = opts.title;
-      upsertMetaByProperty('og:title', opts.title);
-      upsertMetaByName('twitter:title', opts.title);
+    if (meta.title) {
+      document.title = meta.title;
+      upsertMetaByProperty('og:title', meta.openGraph?.title || meta.title);
+      upsertMetaByName('twitter:title', meta.twitter?.title || meta.title);
     }
 
     // Description
-    if (opts.description) {
-      upsertMetaByName('description', opts.description);
-      upsertMetaByProperty('og:description', opts.description);
-      upsertMetaByName('twitter:description', opts.description);
+    if (meta.description) {
+      upsertMetaByName('description', meta.description);
+      upsertMetaByProperty('og:description', meta.openGraph?.description || meta.description);
+      upsertMetaByName('twitter:description', meta.twitter?.description || meta.description);
     }
 
     // Canonical
-    const canonical = opts.canonicalPath
-      ? (opts.canonicalPath.startsWith('http') ? opts.canonicalPath : `${origin}${opts.canonicalPath}`)
-      : window.location.href;
-    upsertLink('canonical', canonical);
-    upsertMetaByProperty('og:url', canonical);
+    if (meta.canonicalPath) {
+      const canonicalUrl = meta.openGraph?.url || '';
+      upsertLink('canonical', canonicalUrl);
+      upsertMetaByProperty('og:url', canonicalUrl);
+    }
 
     // Open Graph basic
-    upsertMetaByProperty('og:type', 'website');
+    if (meta.openGraph?.siteName) {
+      upsertMetaByProperty('og:site_name', meta.openGraph.siteName);
+    }
+    if (meta.openGraph?.type) {
+      upsertMetaByProperty('og:type', meta.openGraph.type);
+    }
 
     // Images
-    if (opts.ogImage) {
-      const img = opts.ogImage.startsWith('http') ? opts.ogImage : `${origin}${opts.ogImage}`;
-      upsertMetaByProperty('og:image', img);
-      upsertMetaByName('twitter:image', img);
+    const ogImage = meta.openGraph?.images?.[0]?.url;
+    if (ogImage) {
+      upsertMetaByProperty('og:image', ogImage);
+    }
+    const twitterImage = meta.twitter?.images?.[0];
+    if (twitterImage) {
+      upsertMetaByName('twitter:image', twitterImage);
     }
 
-    // Twitter card
-    upsertMetaByName('twitter:card', opts.twitterCard || 'summary');
+    // Twitter card details
+    if (meta.twitter?.card) {
+      upsertMetaByName('twitter:card', meta.twitter.card);
+    }
+    if (meta.twitter?.site) {
+      upsertMetaByName('twitter:site', meta.twitter.site);
+    }
 
-    // Robots
-    if (opts.noindex) {
-      upsertMetaByName('robots', 'noindex, nofollow');
+    // Robots meta
+    if (meta.robots?.index === false || meta.robots?.follow === false) {
+      const robotsVal = `${meta.robots.index ? 'index' : 'noindex'}, ${meta.robots.follow ? 'follow' : 'nofollow'}`;
+      upsertMetaByName('robots', robotsVal);
     } else {
-      // Avoid leaving a stale noindex from previous pages
       const robots = document.head.querySelector('meta[name="robots"]');
-      if (robots) robots.setAttribute('content', 'index, follow');
+      if (robots) {
+        robots.setAttribute('content', 'index, follow');
+      }
+    }
+    // Keywords
+    if (meta.keywords) {
+      upsertMetaByName('keywords', meta.keywords);
     }
 
-    // Keywords
-    if (opts.keywords) {
-      upsertMetaByName('keywords', opts.keywords);
+    // Related Searches
+    if (meta.relatedSearches) {
+      upsertMetaByName('related-searches', meta.relatedSearches);
     }
 
     // Author
-    if (opts.author) {
-      upsertMetaByName('author', opts.author);
+    if (SEO_CONFIG.brandName) {
+      upsertMetaByName('author', SEO_CONFIG.brandName);
     }
 
     // Theme Color
-    if (opts.themeColor) {
-      upsertMetaByName('theme-color', opts.themeColor);
-    }
+    upsertMetaByName('theme-color', '#1F2429');
 
-    // JSON-LD (Structured Data)
+    // JSON-LD Structured Data
+    const existingJsonLd = document.head.querySelectorAll('script[data-seo-jsonld="true"]');
+    existingJsonLd.forEach((script) => script.remove());
+
     if (opts.jsonLd) {
-      let script = document.head.querySelector('script[type="application/ld+json"]') as HTMLScriptElement | null;
-      if (!script) {
-        script = document.createElement('script');
+      const entries = Array.isArray(opts.jsonLd) ? opts.jsonLd : [opts.jsonLd];
+      entries.forEach((entry) => {
+        const script = document.createElement('script');
         script.setAttribute('type', 'application/ld+json');
+        script.setAttribute('data-seo-jsonld', 'true');
+        script.textContent = JSON.stringify(entry);
         document.head.appendChild(script);
-      }
-      script.textContent = JSON.stringify(opts.jsonLd);
-    } else {
-      // Remove any existing JSON-LD if not provided for this route
-      const script = document.head.querySelector('script[type="application/ld+json"]');
-      if (script) {
-        document.head.removeChild(script);
-      }
+      });
     }
-  }, [
-    opts.title,
-    opts.description,
-    opts.canonicalPath,
-    opts.noindex,
-    opts.ogImage,
-    opts.twitterCard,
-    opts.keywords,
-    opts.author,
-    opts.themeColor,
-    opts.jsonLd
-  ]);
+  }, [opts]);
 }
 
 export default useSEO;

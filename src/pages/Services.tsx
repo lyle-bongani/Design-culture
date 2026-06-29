@@ -4,28 +4,27 @@ import ServicesHero from '../components/ServicesHero';
 import ServicePillars from '../components/ServicePillars';
 import ServicesCTA from '../components/ServicesCTA';
 import ServicesStory from '../components/ServicesStory';
+import { getServiceSchema, getBreadcrumbSchema } from '../lib/seo/json-ld';
 
 const Services: React.FC = () => {
   useSEO({
-    title: 'Services — Design Culture',
+    title: 'Services',
     description:
       'Explore our services: branding, print design, digital design, marketing collateral, and more crafted for impact.',
     canonicalPath: '/services',
-    ogImage: '/images/pics/servicespillarhero.jpg',
-    twitterCard: 'summary_large_image',
     keywords: 'Branding Services, Print Design, Digital Design, Marketing Collateral, Logo Creation Zimbabwe',
-    author: 'Design Culture',
-    themeColor: '#1F2429',
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      serviceType: 'Graphic Design and Branding',
-      provider: {
-        '@type': 'ProfessionalService',
-        name: 'Design Culture'
-      },
-      description: 'Explore our services: branding, print design, digital design, marketing collateral, and more crafted for impact.'
-    }
+    jsonLd: [
+      getServiceSchema('branding', 'Branding', 'Sketch and develop visual concepts reflecting your brand essence, refining color, typography, and elements into a cohesive identity.'),
+      getServiceSchema('print', 'Print Design', 'Standout brochures, flyers, business cards, bold posters, and custom packaging designed to convert interest into action.'),
+      getServiceSchema('indoor-outdoor', 'Indoor & Outdoor Branding', 'Custom sublimated golf shirts and apparel branding made for comfort, performance, and style.'),
+      getServiceSchema('digital', 'Digital Design', 'Responsive websites, social media visuals, and unified digital presence management.'),
+      getServiceSchema('apparel-merch', 'Design & Print Sublimated Apparel', 'Promotional apparel, sport jerseys, corporate merchandise, and custom sublimated wear.'),
+      getServiceSchema('marketing-collateral', 'Marketing Collateral', 'Compelling flyers, folders, corporate profiles, and signage designed to spark interest and leave a lasting impression.'),
+      getBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' }
+      ])
+    ]
   });
   return (
     <>

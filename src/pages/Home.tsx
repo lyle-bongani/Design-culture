@@ -9,63 +9,28 @@ import Services from '../components/Home/Services';
 import WhyChooseUs from '../components/Home/WhyChooseUs';
 import BrandShowcase from '../components/Home/BrandShowcase';
 import ContactSection from '../components/Home/ContactSection';
+import { getLocalBusinessSchema, getWebSiteSchema, getFAQSchema } from '../lib/seo/json-ld';
 
 const Home: React.FC = () => {
   useSEO({
-    title: 'Design Culture — Zimbabwe Graphic Design & Branding Agency',
+    title: 'Zimbabwe Graphic Design & Branding Agency',
     description:
-      'Design Culture is a Zimbabwean graphic design and branding agency delivering logos, print, digital design, and marketing collateral.',
+      'Design Culture ZW is a creative agency in Harare offering branding, corporate communication, and design services including corporate profiles, signage, brochures, apparel branding, and marketing materials.',
     canonicalPath: '/',
-    ogImage: '/images/pics/homehero.jpg',
-    twitterCard: 'summary_large_image',
     keywords: 'Graphic Design, Branding Agency, Zimbabwe, Logo Design, Digital Design, Print Design, Marketing Collateral',
-    author: 'Design Culture',
-    themeColor: '#1F2429',
     jsonLd: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        name: 'Design Culture',
-        description: 'Design Culture is a Zimbabwean graphic design and branding agency delivering logos, print, digital design, and marketing collateral.',
-        url: 'https://designculture.co.zw',
-        logo: 'https://designculture.co.zw/images/logo/DESIGN_CULTURE_LOGO.png',
-        image: 'https://designculture.co.zw/images/pics/homehero.jpg',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Harare',
-          addressCountry: 'ZW'
+      getLocalBusinessSchema(),
+      getWebSiteSchema(),
+      getFAQSchema([
+        {
+          question: 'Why should my business invest in professional branding and corporate identity design?',
+          answer: 'Investing in professional branding and corporate identity design is the single most effective way to build long-term value, trust, and memorability for your business. A brand is not merely a logo; it is the entire emotional and visual representation of your company. Professional identity design ensures consistency across all communication channels—from physical business cards and signage to your digital website and social media graphics. This consistency signals reliability and professionalism to your clients, which directly improves customer retention and conversion rates. Furthermore, having a clear brand guidelines manual helps your internal teams align and build a cohesive company culture. Design Culture ZW creates bespoke logo systems and complete corporate kits specifically tailored to help Zimbabwean enterprises stand out in competitive markets.'
+        },
+        {
+          question: 'What is the difference between screen printing and sublimation printing for corporate apparel?',
+          answer: 'The primary difference lies in the technology and durability of the finished product. Screen printing involves applying layers of ink directly onto the surface of the fabric, which is excellent for simple designs on cotton garments but can crack, peel, or fade over time with heavy washing. Sublimation printing, on the other hand, uses heat to dye the actual polyester fibers of the garment. This process chemically embeds the ink within the threads, resulting in a design that is completely permanent—it will never crack, peel, or fade, even after years of active wear. Sublimation allows for unlimited colors, gradients, and full-bleed patterns, making it the premier choice for custom corporate golf shirts, uniform wear, and high-performance sports jerseys designed by Design Culture ZW in Harare.'
         }
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: 'Design Culture',
-        url: 'https://designculture.co.zw'
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        itemListElement: [
-          {
-            '@type': 'SiteNavigationElement',
-            position: 1,
-            name: 'Services',
-            url: 'https://designculture.co.zw/services'
-          },
-          {
-            '@type': 'SiteNavigationElement',
-            position: 2,
-            name: 'About Us',
-            url: 'https://designculture.co.zw/about-us'
-          },
-          {
-            '@type': 'SiteNavigationElement',
-            position: 3,
-            name: 'Contact Us',
-            url: 'https://designculture.co.zw/contact-us'
-          }
-        ]
-      }
+      ])
     ]
   });
   return (
